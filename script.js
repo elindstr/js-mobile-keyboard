@@ -1,15 +1,7 @@
-window.addEventListener("resize", resize)
-window.addEventListener("orientationchange", resize)
-resize ()
-function resize () {
-    let rowWidth = document.querySelector("body").offsetWidth
-    let keyWidth = (rowWidth-10) / 11
-    let keyHeight = keyWidth * 1.2
-    renderKeyboard(keyWidth, keyHeight)
-}
+const keyboardDiv = document.getElementById("keyboard")
 
-function renderKeyboard(keyWidth, keyHeight) {
-    keyboardDiv = document.getElementById("keyboard")
+renderKeyboard()
+function renderKeyboard() {
     keyboardDiv.innerHTML = "" 
     let keyboardRows = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -20,14 +12,17 @@ function renderKeyboard(keyWidth, keyHeight) {
         let row = document.createElement("div")
         row.setAttribute("class", "keyboardRow")
         for (let i = 0; i < keyboardRows[r].length; i++) {
-            let d = document.createElement("div")
-            d.innerHTML = `<span>${keyboardRows[r][i]}</span>`
-            d.setAttribute("class", "keyboardKeyDiv")
-            d.style.width = keyWidth
-            d.style.height = keyHeight
-            d.style.fontSize = keyHeight * .6
+            let d = document.createElement("span")
+            d.innerHTML = `${keyboardRows[r][i]}`
+            d.setAttribute("class", "keyboardKeySpan")
+            d.setAttribute("id", keyboardRows[r][i])
             row.appendChild(d)
         }
         keyboardDiv.appendChild(row)
     }
 }
+
+keyboardDiv.addEventListener("click", (event) => {
+    userEntry = event.target.id
+    userEntry? hangmanKeyCheck(userEntry): null
+})

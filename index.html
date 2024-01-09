@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <style>
         body {
             margin: auto;
@@ -22,27 +23,38 @@
             justify-content: center;
             align-items: center;
         }     
-        .keyboardKeyDiv {
+        .keyboardKeySpan {
             /* margin: .4%; */
             margin: 2px;
+            padding: 5px;
             background-color: darkgrey;
             border: 1px solid black;
             border-radius: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 9vw;
+            font-family: "Roboto Mono",Courier, monospace;
+        }
+        .hangman-letters {
+            margin: 4px;
+            text-decoration: underline;
+            font-size: 10vw;
+  
         }
     </style>
 </head>
 <body>
 
     <h1>JavaScript Keyboard</h1>
-    <h2>Use the keyboard to display message.</h2>
+    <h2>Example Use Case: Guess the Word Below</h2>
     <hr width="90%">
-    <div id="display">Test</div>
+
+    <div id="display"></div>
 
     <div id="keyboard"></div>
     <script src="script.js"></script>
+    <script src="hangman.js"></script>
 
 </body>
 </html>
