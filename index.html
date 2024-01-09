@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <style>
 
         /* Reset */
@@ -39,12 +42,15 @@
             position: absolute;
             bottom: 10px;
             margin: 10px auto;
+            width: 100%;
+            max-width: 600px;
         }
         .keyboardRow {
             display: flex; 
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            width: 100%
         }     
         .keyboardKeySpan {
             /* margin: .4%; */
@@ -56,14 +62,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 9vw;
+            font-size: 2.2em;
             font-family: "Roboto Mono",Courier, monospace;
+            width: 100%
         }
         .hangman-letters {
             margin: 4px;
             text-decoration: underline;
-            font-size: 10vw;
-  
+            font-size: 9vw;
         }
     </style>
 </head>

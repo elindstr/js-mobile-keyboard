@@ -46,6 +46,8 @@ function hangmanKeyCheck (userEntry) {
 
     else {
         // blacken incorrect letters
-        keyboardKeySpan.style.backgroundColor = "rgb(63, 63, 63)"
+        if (/^[A-Z]$/.test(userEntry)) {
+            keyboardKeySpan.style.backgroundColor = "rgb(63, 63, 63)"
+        }
     }
 }
